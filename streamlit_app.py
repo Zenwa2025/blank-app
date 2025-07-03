@@ -23,7 +23,7 @@ def fetch_sentiment_score(ticker):
 # Market Data and Analytics
 # ============================
 def fetch_data(ticker, period="1y"):
-    d = yf.download(ticker, period=period, progress=False)["Adj Close"]
+    d = yf.download(ticker, period=period, progress=False)["Close"]
     returns = d.pct_change().dropna()
     return d, returns
 
